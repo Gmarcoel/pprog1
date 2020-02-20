@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "types.h"
 
-#define MAX_IDS 200
+#define MAX_IDS 1064
 
 typedef struct _Set Set;
 
