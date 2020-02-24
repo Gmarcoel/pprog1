@@ -9,9 +9,6 @@ Set* set_create() {
   int i;
   Set *newSet = NULL;
 
-  if (id == NO_ID)
-    return NULL;
-
   newSet = (Set *) malloc(sizeof (Set));
 
   if (newSet == NULL) {
@@ -74,4 +71,15 @@ STATUS set_delId(Set* set,Id id){
   	}
   	set->id[i] = -1;
   return OK;
+}
+
+void set_print(FILE* pf,Set* set){
+    int i;
+    for (i=0;i<MAX_IDS;i++){
+	    if (set->id[i]!=-1)	{
+	    	    fprintf(pf,"%li\n",set->id[i]);
+	    }
+    }
+    fprintf(pf,"Num Ids: %li\n",set->num_ids);
+
 }

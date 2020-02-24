@@ -35,8 +35,11 @@ game_reader.o: game_reader.c game_reader.h
 set.o: set.c set.h
 	gcc $(CFLAGS) -c set.c
 
-set_test: object.o player.o command.o game.o game_loop.o graphic_engine.o screen.o space.o game_reader.o set.o
-	gcc -g command.o game.o game_loop.o graphic_engine.o screen.o space.o game_reader.o player.o object.o set.o -o set_test
+set_test:  set.o set_test.o
+	gcc set.o set_test.o -o set_test
+
+set_test.o: set_test.c
+	gcc -c set_test.c
 
 clean:
 	rm *.o
